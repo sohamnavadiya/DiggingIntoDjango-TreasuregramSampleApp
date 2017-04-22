@@ -25,7 +25,7 @@ SECRET_KEY = '=ly5uwt!wu@t*7r^ba1oj%f_gjyemph2iphcf2j&b(syt-7u-9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -115,6 +115,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -123,3 +124,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, '../main_app/static'),
+)
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+# soham1
+# soham@yopmail.com
+# soham123!@#
